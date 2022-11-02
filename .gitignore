@@ -1,0 +1,6 @@
+*.zip
+Images-dataset/
+.ipynb_checkpoints/
+__*
+*.ipynb
+.DS_Store
