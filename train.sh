@@ -1,0 +1,1 @@
+python train.py -s dataset_splits --exp test --n_classes 10 --n_epochs 100 --epoch 0 -b 64 --lr 1e-4 --pretrained --device 1 --checkpoint_interval 25

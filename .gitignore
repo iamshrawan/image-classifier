@@ -4,3 +4,5 @@ Images-dataset/
 __*
 *.ipynb
 .DS_Store
+checkpoints/
+wandb/

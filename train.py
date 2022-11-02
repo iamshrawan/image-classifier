@@ -33,7 +33,7 @@ os.makedirs('./checkpoints/%s' % (opt.exp), exist_ok=True)
 
 opt.cuda = torch.cuda.is_available()
 if opt.cuda:
-    device = select_device(opt.device, opt.batch_size)
+    device = select_device(opt.device, opt.batch_sz)
     device_id = device[0]
 else:
     device_id = 0
@@ -84,7 +84,7 @@ for epoch in range(opt.epoch, opt.n_epochs):
 
         if opt.cuda:
             img = img.cuda(device_id)
-            labels = img.cuda(device_id)
+            labels = labels.cuda(device_id)
 
         model.train()
         optimizer.zero_grad()
@@ -119,7 +119,6 @@ for epoch in range(opt.epoch, opt.n_epochs):
                 'CE_loss': loss.item()
             })
 
-        break
     
     #Calculating Metrics
     prec, rec, f1, acc = calculate_metrics(model, dev_loader, opt.cuda, device_id)
